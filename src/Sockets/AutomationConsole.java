@@ -1,4 +1,10 @@
 package Sockets;
+
+/**
+ * By Anthony Pezzimenti
+ * 26/11/2020
+ */
+
 import CDArchiveProject.CDRecord;
 import CDArchiveProject.CDRecordTableModel;
 
@@ -8,9 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- * Fields declared and Client settings
- */
 public class AutomationConsole {
     JFrame window;
     List<CDRecord> records;
@@ -59,9 +62,6 @@ public class AutomationConsole {
         }
     });
 
-    /**
-     * Window settings for automation console
-     */
     //Application Settings
     public AutomationConsole() {
         window = new JFrame("Automation Console");
@@ -79,11 +79,6 @@ public class AutomationConsole {
         window.getContentPane().setBackground(new Color(255,254,233));
     }
 
-    /**
-     * ComboBox, Process button, Barcode text
-     * and Section text fields. Also the settings
-     * for messages to and from
-     */
     //Buttons, Text Fields and Messages
     private void createUI() {
         tableData = new CDRecordTableModel(records);
@@ -116,7 +111,6 @@ public class AutomationConsole {
                     case 4: outMessage += "Sort: "; break;
                 }
                 outMessage += barcodeText.getText() + " " + sectionText.getText();
-               //outMessage += tableData.getValueAt(cdRecordTable.getSelectedRow(), 0);
                if(client !=  null) {
                   client.sendMessage(outMessage);
                 }

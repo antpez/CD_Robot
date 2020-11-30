@@ -1,5 +1,10 @@
 package CDArchiveProject;
 
+/**
+ * By Anthony Pezzimenti
+ * 26/11/2020
+ */
+
 import Lists.DoubleLinkedList;
 import Sockets.AutomationConsole;
 import Sockets.Client;
@@ -21,9 +26,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Fields declared in the class
- */
 public class ArchiveConsole {
     JFrame window;
     List<CDRecord> records;
@@ -43,10 +45,6 @@ public class ArchiveConsole {
     JTextField barcodeText;
     JTextArea descText, processLog;
 
-    /**
-     * Loads all the data from the records.data, Client settings
-     * and Window settings
-     */
     //Application Settings
     public ArchiveConsole () {
         records = RecordStorage.loadRecordList("records.data");
@@ -112,9 +110,6 @@ public class ArchiveConsole {
         window.getContentPane().setBackground(new Color(255,254,233));
     }
 
-    /**
-     * Search fields and exit button
-     */
     //Main window Search and Exit
     private void createUI() {
         JLabel searchLabel = new JLabel("Search String:");
@@ -221,11 +216,6 @@ public class ArchiveConsole {
         );
     }
 
-    /**
-     * By Title, Author and Barcode Buttons
-     * and JTable settings
-     * @return
-     */
     //JTable By Title, Author, Barcode
     private JPanel createArchiveListPanel () {
         JPanel panel = new JPanel();
@@ -353,11 +343,6 @@ public class ArchiveConsole {
         return panel;
     }
 
-    /**
-     * New item and Save/Update Button
-     * Text fields that connect to the JTable
-     * @return
-     */
     //New Item and Save/Update
     private JPanel createRecordPanel () {
         JPanel panel = new JPanel();
@@ -540,11 +525,6 @@ public class ArchiveConsole {
         return panel;
     }
 
-    /**
-     * Process log text area
-     * Binary tree and HashMaps
-     * @return
-     */
     //Process Log and Binary Trees
     private JPanel createProcessLogPanel () {
         JPanel panel = new JPanel();
@@ -714,11 +694,6 @@ public class ArchiveConsole {
         return panel;
     }
 
-    /**
-     * Actions that send messages to the automation console
-     * Retrieve, Remove, Return, Add and Sorts
-     * @return
-     */
     //Automation Console and DLL
     private JPanel createActionRequestPanel () {
         JPanel panel = new JPanel();
@@ -859,19 +834,6 @@ public class ArchiveConsole {
 
     //Adding function to a button is buttonName.addActionLister(new Action Lister)
 
-    /**
-     * Gridbag layout components
-     * @param contentPane
-     * @param component
-     * @param fill
-     * @param gridx
-     * @param gridy
-     * @param gridweight
-     * @param gridheight
-     * @param weightx
-     * @param weighty
-     * @param <C>
-     */
     private <C extends Component> void addComponent(
             Container contentPane, C component,
             int fill, int gridx, int gridy,
